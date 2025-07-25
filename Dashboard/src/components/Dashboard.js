@@ -23,7 +23,7 @@ const Dashboard = () => {
       alert("Unauthorized! Redirecting to login...");
       window.location.href = "https://online-trading-platform-frontend.onrender.com/login"; 
     }
-  }, [token]);
+  },{ withCredentials: true }, [token]);
 
   return (
     <div className="dashboard-container">
