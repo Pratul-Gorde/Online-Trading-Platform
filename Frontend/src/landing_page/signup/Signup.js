@@ -7,7 +7,7 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   const handleSignup = async () =>{
-  const res = await axios.post("https://online-trading-platform-oic8.onrender.com", {
+  const res = await axios.post("https://online-trading-platform-oic8.onrender.com/addNewUser", {
     email: user,
     password: password,
   },
