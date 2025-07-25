@@ -15,15 +15,19 @@ import { GeneralContextProvider } from "./GeneralContext";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const token = Cookies.get("authToken");
-  console.log("Token from Cookies:", token);
-
-  useEffect(() => {
-    if (!token) {
-      alert("Unauthorized! Redirecting to login...");
-      window.location.href = "https://online-trading-platform-frontend.onrender.com/login"; 
-    }
-  },{ withCredentials: true }, [token]);
+ useEffect(() => {
+  axios.get("https://online-trading-platform-backend.onrender.com/verify-token", {
+    withCredentials: true,
+  })
+  .then((res) => {
+    console.log("User is authenticated:", res.data.user);
+  })
+  .catch((err) => {
+    console.error("Unauthorized:", err);
+    alert("Unauthorized! Redirecting to login...");
+    window.location.href = "https://online-trading-platform-frontend.onrender.com/login";
+  });
+}, []);
 
   return (
     <div className="dashboard-container">
