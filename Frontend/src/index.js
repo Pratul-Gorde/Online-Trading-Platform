@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import HomePage from "./landing_page/home/HomePage";
 import AboutPage from "./landing_page/about/AboutPage";
@@ -15,7 +15,7 @@ import Login from "./landing_page/login/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <HashRouter>
+  <BrowserRouter>
   <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
@@ -27,6 +27,6 @@ root.render(
         <Route path="/support" element={<SupportPage/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
-    <HashRouter/>
+    <BrowserRouter/>
   </BrowserRouter>
 );
