@@ -10,7 +10,7 @@ function Login() {
   const HandleLogin = async (event) => {
     event.preventDefault();
     try{
-    const response = await axios.post("http://localhost:3002/loginUser", {
+    const response = await axios.post("https://online-trading-platform-oic8.onrender.com", {
       email: email,
       password: password,
     }, { withCredentials: true });
