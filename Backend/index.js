@@ -232,22 +232,21 @@ app.post("/loginUser", async (req, res) => {
   return res.json({ success: true,authToken});  
 });
 
-app.get("/verifyToken",(req,res) =>{
-   const token = req.cookies.authToken;
-   console.log("Cookies",req.cookies);
-   if (!token) {
-  return res.status(403).json({ error: "Access denied, token missing" });
-}
-   try{
-   const decoded = jwt.verify(token,process.env.JWT_SECRET);
-   req.user = decoded;
-   next();
-   }
-   catch (err) {
-    return res.status(401).json({ error: "Invalid token" });
-   }
-});
+app.get("/verifyToken", (req, res) => {
+  const token = req.cookies.authToken;
+  console.log("Cookies", req.cookies);
 
+  if (!token) {
+    return res.status(403).json({ error: "Access denied, token missing" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return res.json({ success: true, user: decoded.user });
+  } catch (err) {
+    return res.status(401).json({ error: "Invalid token" });
+  }
+});
 
 app.get("/allHoldings",async (req, res) => {
   let allHoldings = await holdingModel.find({});
