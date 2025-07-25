@@ -21,7 +21,7 @@ const Dashboard = () => {
   useEffect(() => {
     if (!token) {
       alert("Unauthorized! Redirecting to login...");
-      window.location.href = "http://localhost:3000/login"; 
+      window.location.href = "https://online-trading-platform-frontend.onrender.com"; 
     }
   }, [token]);
 
