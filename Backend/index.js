@@ -228,7 +228,7 @@ app.post("/loginUser", async (req, res) => {
   };
   const authToken = jwt.sign(data,process.env.JWT_SECRET,{expiresIn: "1h"});
   console.log(authToken);
-  res.cookie("authToken",authToken,{httpOnly:true,secure:true, sameSite: "None"  });
+  res.cookie("authToken",authToken,{httpOnly:false,secure:true, sameSite: "None"  });
   return res.json({ success: true,authToken});  
 });
 
