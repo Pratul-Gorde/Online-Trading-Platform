@@ -28,5 +28,4 @@ root.render(
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     <BrowserRouter/>
-  </BrowserRouter>
 );
