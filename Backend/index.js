@@ -232,7 +232,7 @@ app.post("/loginUser", async (req, res) => {
   return res.json({ success: true,authToken});  
 });
 
-const verifyToken = (req,res,next) =>{
+app.get("/verifyToken",(req,res) =>{
    const token = req.cookies.authToken;
    console.log("Cookies",req.cookies);
    if (!token) {
