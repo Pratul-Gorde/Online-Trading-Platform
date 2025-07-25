@@ -246,7 +246,7 @@ app.get("/verifyToken",(req,res) =>{
    catch (err) {
     return res.status(401).json({ error: "Invalid token" });
    }
-}
+});
 
 
 app.get("/allHoldings",async (req, res) => {
