@@ -27,5 +27,5 @@ root.render(
         <Route path="/support" element={<SupportPage/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
-    <BrowserRouter/>
+  </BrowserRouter>
 );
