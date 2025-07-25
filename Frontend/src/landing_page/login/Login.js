@@ -18,7 +18,7 @@ function Login() {
       const authToken = response.data.authToken;
       localStorage.setItem("authToken", authToken);
 
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://online-trading-platform-1.onrender.com";
     } 
   }catch(error){
      if (error.response && error.response.data && error.response.data.err) {
