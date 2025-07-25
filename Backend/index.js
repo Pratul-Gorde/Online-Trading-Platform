@@ -23,7 +23,7 @@ const app = express();
 const corsOptions = {
   origin: ["https://online-trading-platform-frontend.onrender.com", "https://online-trading-platform-1.onrender.com"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: include, 
+  credentials: true, 
 };
 
 app.use(cors(corsOptions));
