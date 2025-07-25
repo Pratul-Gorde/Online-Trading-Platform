@@ -8,7 +8,7 @@ const Positions = () => {
   const [allPositions,setallPositions] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://online-trading-platform-oic8.onrender.com").then((res)=>{
+    axios.get("https://online-trading-platform-oic8.onrender.com/allPositions").then((res)=>{
        setallPositions(res.data);
     });
   },[]);
