@@ -23,11 +23,12 @@ const app = express();
 const corsOptions = {
   origin: ["https://online-trading-platform-frontend.onrender.com", "https://online-trading-platform-1.onrender.com"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, 
+  credentials: include, 
 };
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // app.get('/addHoldings',async(req,res)=>{
 //    let tempHoldings =[
