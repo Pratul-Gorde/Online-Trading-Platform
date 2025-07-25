@@ -21,7 +21,7 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: ["https://online-trading-platform-frontend.onrender.com", "https://online-trading-platform-1.onrender.com"],
   credentials: true, 
 };
 
