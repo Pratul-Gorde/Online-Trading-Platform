@@ -9,6 +9,7 @@ function Login() {
 
   const HandleLogin = async (event) => {
     event.preventDefault();
+     console.log("Submitting...")
     try{
     const response = await axios.post("https://online-trading-platform-oic8.onrender.com/loginUser", {
       email: email,
