@@ -17,7 +17,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 const Dashboard = () => {
   const navigate = useNavigate();
  useEffect(() => {
-  axios.get("https://online-trading-platform-oic8.onrender.com/verify-token", {
+  axios.get("https://online-trading-platform-oic8.onrender.com/verifyToken", {
     withCredentials: true,
   })
   .then((res) => {
