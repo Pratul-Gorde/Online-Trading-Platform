@@ -250,6 +250,7 @@ app.get("/verifyToken", (req, res) => {
 
 app.get("/allHoldings",async (req, res) => {
   let allHoldings = await holdingModel.find({});
+  console.log(allHoldings);
   res.json(allHoldings);
 });
 
