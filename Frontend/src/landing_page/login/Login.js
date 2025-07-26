@@ -16,7 +16,7 @@ function Login() {
     }, { withCredentials: true });
     if (response.data.success) {   
       const authToken = response.data.authToken;
-      localStorage.setItem("authToken", authToken);
+      // localStorage.setItem("authToken", authToken);
 
       window.location.href = "https://online-trading-platform-1.onrender.com";
     } 
